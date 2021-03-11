@@ -11,9 +11,7 @@ variable "tags" {
 }
 
 variable "workspace_bucket_prefix" {
-  description = <<EOS
-  The name of the bucket to contain the Athena work group's data is composed of a prefix and the name.
-EOS
+  description = "The name of the bucket to contain the Athena work group's data is composed of a prefix and the name."
 
   type = string
 }
