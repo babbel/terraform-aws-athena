@@ -13,7 +13,7 @@ provided by [this documentation](https://docs.aws.amazon.com/athena/latest/ug/ap
 
 ```tf
 module "alb-athena-example" {
-  source = "https://babbel.s3.amazonaws.com/lessonnine/shared.terraform/...COMMIT_SHA.../alb/athena.zip"
+  source = "babbel/athena/aws"
 
   name                    = "alb-logs-example-production"
   workspace_bucket_prefix = "athena-workgroup"
