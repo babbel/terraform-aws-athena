@@ -27,6 +27,14 @@ data "aws_iam_policy_document" "glue-catalog-database-manage-tables" {
 resource "aws_s3_bucket" "athena-workspace" {
   bucket = join("-", [var.workspace_bucket_prefix, var.name])
 
+  server_side_encryption_configuration {
+    rule {
+      apply_server_side_encryption_by_default {
+        sse_algorithm = "AES256"
+      }
+    }
+  }
+
   tags = var.tags
 }
 
