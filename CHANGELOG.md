@@ -1,8 +1,9 @@
 # Changelog
 
-## v1.0.1
+## v1.1.0
 
-- [Output resource arns](https://github.com/babbel/terraform-aws-athena/pull/2)
+- [Export resource arns](https://github.com/babbel/terraform-aws-athena/pull/2)
+- [Remove policy document `iam-policy-document-athena-workspace-use`](https://github.com/babbel/terraform-aws-athena/pull/2)
 
 ## v1.0.0
 
