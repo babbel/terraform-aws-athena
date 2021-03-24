@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.1.1
+
+Remove unused IAM policy documents.
+
 ## v1.1.0
 
 - [Export resources created by this module](https://github.com/babbel/terraform-aws-athena/pull/2)
