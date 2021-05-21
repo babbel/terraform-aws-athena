@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.2.0
+
+Substitute dashes by underscores in glue catalog database names.
+
 ## v1.1.1
 
 Remove unused IAM policy documents.
