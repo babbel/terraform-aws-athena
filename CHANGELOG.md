@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.3.0
+
+- [Add support for resource-specific tags](https://github.com/babbel/terraform-aws-athena/pull/5)
+
 ## v1.2.0
 
 Substitute dashes by underscores in glue catalog database names.
