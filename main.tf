@@ -23,7 +23,7 @@ resource "aws_s3_bucket" "athena-workspace" {
 
   tags = merge(
     var.tags,
-    lookup(var.resource_specific_tags, "bucket", {})
+    lookup(var.resource_specific_tags, "s3_bucket", {})
   )
 }
 
@@ -53,6 +53,6 @@ resource "aws_athena_workgroup" "this" {
 
   tags = merge(
     var.tags,
-    lookup(var.resource_specific_tags, "workgroup", {})
+    lookup(var.resource_specific_tags, "athena_workgroup", {})
   )
 }
