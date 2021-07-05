@@ -21,7 +21,10 @@ resource "aws_s3_bucket" "athena-workspace" {
     }
   }
 
-  tags = var.tags
+  tags = merge(
+    var.tags,
+    lookup(var.resource_specific_tags, "s3_bucket", {})
+  )
 }
 
 resource "aws_s3_bucket_public_access_block" "athena-workspace" {
@@ -48,5 +51,8 @@ resource "aws_athena_workgroup" "this" {
     }
   }
 
-  tags = var.tags
+  tags = merge(
+    var.tags,
+    lookup(var.resource_specific_tags, "athena_workgroup", {})
+  )
 }
