@@ -19,9 +19,9 @@ variable "tags" {
 }
 
 variable "workspace_bucket_expiration_days" {
-  default = 60
+  default = 30
 
-  description = "The number of days after creation when objects will be deleted from the workspace bucket."
+  description = "The expiration days for objects in the workspace bucket in days. By default objects are expired 30 days after their creation. If set to 0, expiration is disabled."
 }
 
 variable "workspace_bucket_prefix" {
