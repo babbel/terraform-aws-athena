@@ -21,6 +21,14 @@ resource "aws_s3_bucket" "athena-workspace" {
     }
   }
 
+  lifecycle_rule {
+    enabled = true
+
+    expiration {
+      days = var.workspace_bucket_expiration_days
+    }
+  }
+
   tags = merge(
     var.tags,
     lookup(var.resource_specific_tags, "s3_bucket", {})

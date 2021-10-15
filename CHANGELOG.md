@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.3.1
+
+- [Add expiry for objects in workspace bucket](https://github.com/babbel/terraform-aws-athena/pull/10)
+
 ## v1.3.0
 
 - [Add support for resource-specific tags](https://github.com/babbel/terraform-aws-athena/pull/5)

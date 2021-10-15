@@ -18,6 +18,12 @@ variable "tags" {
   type = map(string)
 }
 
+variable "workspace_bucket_expiration_days" {
+  default = 60
+
+  description = "The number of days after creation when objects will be deleted from the workspace bucket."
+}
+
 variable "workspace_bucket_prefix" {
   description = "The name of the bucket to contain the Athena work group's data is composed of a prefix and the name."
 
