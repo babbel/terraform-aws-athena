@@ -1,6 +1,6 @@
 # Changelog
 
-## v1.3.1
+## v1.4.0
 
 - [Add expiry for objects in workspace bucket](https://github.com/babbel/terraform-aws-athena/pull/10)
 
