@@ -13,6 +13,18 @@ resource "aws_glue_catalog_database" "this" {
 resource "aws_s3_bucket" "athena-workspace" {
   bucket = join("-", [var.workspace_bucket_prefix, var.name])
 
+  dynamic "lifecycle_rule" {
+    for_each = var.workspace_bucket_expiration_days != null ? [var.workspace_bucket_expiration_days] : []
+
+    content {
+      enabled = true
+
+      expiration {
+        days = lifecycle_rule.value
+      }
+    }
+  }
+
   server_side_encryption_configuration {
     rule {
       apply_server_side_encryption_by_default {
