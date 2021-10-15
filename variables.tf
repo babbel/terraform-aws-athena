@@ -21,7 +21,7 @@ variable "tags" {
 variable "workspace_bucket_expiration_days" {
   default = 30
 
-  description = "The expiration days for objects in the workspace bucket in days. By default objects are expired 30 days after their creation. If set to 0, expiration is disabled."
+  description = "The expiration days for objects in the workspace bucket in days. By default objects are expired 30 days after their creation. If set to null, expiration is disabled."
 }
 
 variable "workspace_bucket_prefix" {

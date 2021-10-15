@@ -14,7 +14,7 @@ resource "aws_s3_bucket" "athena-workspace" {
   bucket = join("-", [var.workspace_bucket_prefix, var.name])
 
   dynamic "lifecycle_rule" {
-    for_each = var.workspace_bucket_expiration_days > 0 ? [var.workspace_bucket_expiration_days] : []
+    for_each = var.workspace_bucket_expiration_days != null ? [var.workspace_bucket_expiration_days] : []
 
     content {
       enabled = true
