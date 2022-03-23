@@ -9,18 +9,6 @@ resource "aws_glue_catalog_database" "this" {
 resource "aws_s3_bucket" "athena-workspace" {
   bucket = join("-", [var.workspace_bucket_prefix, var.name])
 
-  dynamic "lifecycle_rule" {
-    for_each = var.workspace_bucket_expiration_days != null ? [var.workspace_bucket_expiration_days] : []
-
-    content {
-      enabled = true
-
-      expiration {
-        days = lifecycle_rule.value
-      }
-    }
-  }
-
   tags = merge(
     var.tags,
     lookup(var.resource_specific_tags, "s3_bucket", {})
@@ -33,6 +21,21 @@ resource "aws_s3_bucket_server_side_encryption_configuration" "athena-workspace"
   rule {
     apply_server_side_encryption_by_default {
       sse_algorithm = "AES256"
+    }
+  }
+}
+
+resource "aws_s3_bucket_lifecycle_configuration" "athena-workspace" {
+  for_each = var.workspace_bucket_expiration_days != null ? [var.workspace_bucket_expiration_days] : []
+
+  bucket = aws_s3_bucket.athena-workspace.bucket
+
+  rule {
+    id     = "expire"
+    status = "Enabled"
+
+    expiration {
+      days = each.value
     }
   }
 }
