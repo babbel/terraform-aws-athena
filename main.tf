@@ -21,18 +21,20 @@ resource "aws_s3_bucket" "athena-workspace" {
     }
   }
 
-  server_side_encryption_configuration {
-    rule {
-      apply_server_side_encryption_by_default {
-        sse_algorithm = "AES256"
-      }
-    }
-  }
-
   tags = merge(
     var.tags,
     lookup(var.resource_specific_tags, "s3_bucket", {})
   )
+}
+
+resource "aws_s3_bucket_server_side_encryption_configuration" "athena-workspace" {
+  bucket = aws_s3_bucket.athena-workspace.bucket
+
+  rule {
+    apply_server_side_encryption_by_default {
+      sse_algorithm = "AES256"
+    }
+  }
 }
 
 resource "aws_s3_bucket_public_access_block" "athena-workspace" {
