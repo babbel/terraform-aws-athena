@@ -16,7 +16,7 @@ provided by [this documentation](https://docs.aws.amazon.com/athena/latest/ug/ap
 ```tf
 module "alb-athena-example" {
   source  = "babbel/athena/aws"
-  version = "1.3.0"
+  version = "~> 2.0"
 
   name                    = "alb-logs-example-production"
   workspace_bucket_prefix = "athena-workgroup"
