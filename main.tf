@@ -1,7 +1,3 @@
-data "aws_caller_identity" "current" {}
-
-data "aws_region" "current" {}
-
 resource "aws_glue_catalog_database" "this" {
   // dashes in glue table names may cause errors when running Athena DDL queries.
   // cf. https://aws.amazon.com/premiumsupport/knowledge-center/parse-exception-missing-eof-athena/
