@@ -26,7 +26,7 @@ resource "aws_s3_bucket_server_side_encryption_configuration" "athena-workspace"
 }
 
 resource "aws_s3_bucket_lifecycle_configuration" "athena-workspace" {
-  for_each = var.workspace_bucket_expiration_days != null ? [var.workspace_bucket_expiration_days] : []
+  for_each = toset(var.workspace_bucket_expiration_days != null ? [tostring(var.workspace_bucket_expiration_days)] : [])
 
   bucket = aws_s3_bucket.athena-workspace.bucket
 
