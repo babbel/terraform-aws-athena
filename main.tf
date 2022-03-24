@@ -26,7 +26,7 @@ resource "aws_s3_bucket_server_side_encryption_configuration" "athena-workspace"
 }
 
 resource "aws_s3_bucket_lifecycle_configuration" "athena-workspace" {
-  for_each = var.workspace_bucket_expiration_days != null ? [var.workspace_bucket_expiration_days] : []
+  count = var.workspace_bucket_expiration_days != null ? 1 : 0
 
   bucket = aws_s3_bucket.athena-workspace.bucket
 
@@ -35,7 +35,7 @@ resource "aws_s3_bucket_lifecycle_configuration" "athena-workspace" {
     status = "Enabled"
 
     expiration {
-      days = each.value
+      days = var.workspace_bucket_expiration_days
     }
   }
 }

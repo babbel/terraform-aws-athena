@@ -1,5 +1,9 @@
 # Changelog
 
+## v2.0.1
+
+- [Fix for_each attribute](https://github.com/babbel/terraform-aws-athena/pull/18)
+
 ## v2.0.0
 
 - [Add support for hashicorp/aws v4 in new major version](https://github.com/babbel/terraform-aws-athena/pull/17)
