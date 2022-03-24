@@ -1,5 +1,9 @@
 # Changelog
 
+## v2.0.0
+
+- [Add support for hashicorp/aws v4 in new major version](https://github.com/babbel/terraform-aws-athena/pull/17)
+
 ## v1.4.0
 
 - [Add expiry for objects in workspace bucket](https://github.com/babbel/terraform-aws-athena/pull/10)
