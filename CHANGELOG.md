@@ -1,5 +1,9 @@
 # Changelog
 
+## v2.1.0
+
+- [Create S3 lifecycle config with empty filter](https://github.com/babbel/terraform-aws-athena/pull/21)
+
 ## v2.0.1
 
 - [Fix for_each attribute](https://github.com/babbel/terraform-aws-athena/pull/18)
