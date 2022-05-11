@@ -1,6 +1,6 @@
 # Changelog
 
-## v2.1.0
+## v2.0.2
 
 - [Create S3 lifecycle config with empty filter](https://github.com/babbel/terraform-aws-athena/pull/21)
 
