@@ -12,6 +12,12 @@ variable "resource_specific_tags" {
   default = {}
 }
 
+variable "selected_engine_version" {
+  default = "AUTO"
+
+  description = "The work group's engine version."
+}
+
 variable "tags" {
   description = "Map of tags to assign to all resources supporting tags."
 

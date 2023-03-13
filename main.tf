@@ -62,6 +62,10 @@ resource "aws_athena_workgroup" "this" {
     enforce_workgroup_configuration    = true
     publish_cloudwatch_metrics_enabled = false
 
+    engine_version {
+      selected_engine_version = var.selected_engine_version
+    }
+
     bytes_scanned_cutoff_per_query = var.workspace_bytes_scanned_cutoff
 
     result_configuration {

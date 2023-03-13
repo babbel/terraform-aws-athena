@@ -1,5 +1,9 @@
 # Changelog
 
+## v2.1.0
+
+- [Add selected_engine_version](https://github.com/babbel/terraform-aws-athena/pull/26)
+
 ## v2.0.2
 
 - [Create S3 lifecycle config with empty filter](https://github.com/babbel/terraform-aws-athena/pull/21)

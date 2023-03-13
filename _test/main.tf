@@ -3,13 +3,13 @@ provider "aws" {
 }
 
 module "athena" {
-  source  = "./.."
+  source = "./.."
 
   name                    = "alb-logs-example-production"
   workspace_bucket_prefix = "athena-workgroup"
-  
+
   tags = {
-    app  = "some-service"
-    env  = "production"
+    app = "some-service"
+    env = "production"
   }
 }
