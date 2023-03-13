@@ -43,3 +43,11 @@ variable "workspace_bytes_scanned_cutoff" {
 
   default = 10 * 1024 * 1024 * 1024 * 1024 # 10TB
 }
+
+variable "force_destroy" {
+  description = "Whether to force destroy the workgroup and the S3 bucket."
+
+  type = bool
+
+  default = false
+}
