@@ -25,6 +25,7 @@ module "alb-athena-example" {
     app = "example"
     env = "production"
   }
+
   resource_specific_tags = {
     s3_bucket = {
       owner = "athena"
