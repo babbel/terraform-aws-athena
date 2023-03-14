@@ -9,6 +9,8 @@ resource "aws_glue_catalog_database" "this" {
 resource "aws_s3_bucket" "athena-workspace" {
   bucket = join("-", [var.workspace_bucket_prefix, var.name])
 
+  force_destroy = var.force_destroy
+
   tags = merge(
     var.tags,
     lookup(var.resource_specific_tags, "s3_bucket", {})
@@ -57,6 +59,8 @@ resource "aws_s3_bucket_public_access_block" "athena-workspace" {
 
 resource "aws_athena_workgroup" "this" {
   name = var.name
+
+  force_destroy = var.force_destroy
 
   configuration {
     enforce_workgroup_configuration    = true

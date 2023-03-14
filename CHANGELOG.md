@@ -1,5 +1,9 @@
 # Changelog
 
+## v2.2.0
+
+- [Add force_destroy option to cleanly delete S3 bucket and workshop](https://github.com/babbel/terraform-aws-athena/pull/27)
+
 ## v2.1.0
 
 - [Add selected_engine_version](https://github.com/babbel/terraform-aws-athena/pull/26)
