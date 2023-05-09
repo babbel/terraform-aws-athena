@@ -1,4 +1,5 @@
 resource "aws_glue_catalog_database" "this" {
+  count = var.create_glue_database ? 1 : 0
   // dashes in glue table names may cause errors when running Athena DDL queries.
   // cf. https://aws.amazon.com/premiumsupport/knowledge-center/parse-exception-missing-eof-athena/
   name = replace(var.name, "-", "_")
