@@ -29,6 +29,13 @@ variable "workspace_bucket_expiration_days" {
 variable "workspace_bucket_prefix" {
   description = "The name of the bucket to contain the Athena work group's data is composed of a prefix and the name."
   type        = string
+  default     = "athena-results"
+}
+
+variable "workgroup_bucket" {
+  description = "The name of the bucket to contain the Athena work group's data."
+  type        = string
+  default     = null
 }
 
 variable "workspace_bytes_scanned_cutoff" {

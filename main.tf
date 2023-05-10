@@ -8,7 +8,7 @@ resource "aws_glue_catalog_database" "this" {
 }
 
 resource "aws_s3_bucket" "athena-workspace" {
-  bucket = join("-", [var.workspace_bucket_prefix, var.name])
+  bucket = var.workgroup_bucket == null ? "${var.workspace_bucket_prefix}-${var.name}" : var.workgroup_bucket
 
   force_destroy = var.force_destroy
 

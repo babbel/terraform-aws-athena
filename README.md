@@ -72,8 +72,9 @@ No modules.
 | <a name="input_resource_specific_tags"></a> [resource\_specific\_tags](#input\_resource\_specific\_tags) | Map of tags to assign to specific resources supporting tags. Merged with `tags`. | `map(map(string))` | `{}` | no |
 | <a name="input_selected_engine_version"></a> [selected\_engine\_version](#input\_selected\_engine\_version) | The work group's engine version. | `string` | `"AUTO"` | no |
 | <a name="input_tags"></a> [tags](#input\_tags) | Map of tags to assign to all resources supporting tags. | `map(string)` | n/a | yes |
+| <a name="input_workgroup_bucket"></a> [workgroup\_bucket](#input\_workgroup\_bucket) | The name of the bucket to contain the Athena work group's data. | `string` | `null` | no |
 | <a name="input_workspace_bucket_expiration_days"></a> [workspace\_bucket\_expiration\_days](#input\_workspace\_bucket\_expiration\_days) | The expiration days for objects in the workspace bucket in days. By default objects are expired 30 days after their creation. If set to null, expiration is disabled. | `number` | `30` | no |
-| <a name="input_workspace_bucket_prefix"></a> [workspace\_bucket\_prefix](#input\_workspace\_bucket\_prefix) | The name of the bucket to contain the Athena work group's data is composed of a prefix and the name. | `string` | n/a | yes |
+| <a name="input_workspace_bucket_prefix"></a> [workspace\_bucket\_prefix](#input\_workspace\_bucket\_prefix) | The name of the bucket to contain the Athena work group's data is composed of a prefix and the name. | `string` | `"athena-results"` | no |
 | <a name="input_workspace_bytes_scanned_cutoff"></a> [workspace\_bytes\_scanned\_cutoff](#input\_workspace\_bytes\_scanned\_cutoff) | The upper data usage limit (cutoff) for the amount of bytes a single query in the workgroup is allowed to scan. Defaults to 10 TB. | `number` | `10995116277760` | no |
 
 ## Outputs
@@ -83,4 +84,4 @@ No modules.
 | <a name="output_athena_workgroup"></a> [athena\_workgroup](#output\_athena\_workgroup) | Athena workgroup. |
 | <a name="output_glue_catalog_database"></a> [glue\_catalog\_database](#output\_glue\_catalog\_database) | Glue catalog database. |
 | <a name="output_s3_bucket"></a> [s3\_bucket](#output\_s3\_bucket) | S3 bucket for storing Athena data. |
-<!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+<!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
