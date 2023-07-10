@@ -1,5 +1,9 @@
 # Changelog
 
+## v2.3.0
+
+- [Relax version constraints for modules ](https://github.com/babbel/terraform-aws-athena/pull/29)
+
 ## v2.2.0
 
 - [Add force_destroy option to cleanly delete S3 bucket and workshop](https://github.com/babbel/terraform-aws-athena/pull/27)
