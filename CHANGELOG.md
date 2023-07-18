@@ -1,5 +1,9 @@
 # Changelog
 
+## v2.4.0
+
+- [Configure object ownership for the bucket](https://github.com/babbel/terraform-aws-athena/pull/31)
+
 ## v2.3.0
 
 - [Relax version constraints for modules ](https://github.com/babbel/terraform-aws-athena/pull/29)
