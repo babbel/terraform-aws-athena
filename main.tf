@@ -57,6 +57,14 @@ resource "aws_s3_bucket_public_access_block" "athena-workspace" {
   restrict_public_buckets = true # forbids setting cross-account access policies as well
 }
 
+resource "aws_s3_bucket_ownership_controls" "athena-workspace" {
+  bucket = aws_s3_bucket.athena-workspace.bucket
+
+  rule {
+    object_ownership = "BucketOwnerEnforced"
+  }
+}
+
 resource "aws_athena_workgroup" "this" {
   name = var.name
 
