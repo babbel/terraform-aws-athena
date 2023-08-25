@@ -9,9 +9,3 @@ output "s3_bucket" {
 
   value = aws_s3_bucket.athena-workspace
 }
-
-output "glue_catalog_database" {
-  description = "Glue catalog database."
-
-  value = aws_glue_catalog_database.this
-}

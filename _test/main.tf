@@ -5,8 +5,8 @@ provider "aws" {
 module "athena" {
   source = "./.."
 
-  name                    = "alb-logs-example-production"
-  workspace_bucket_prefix = "athena-workgroup"
+  name             = "alb-logs-example-production"
+  workgroup_bucket = "athena-workgroup-alb-logs-example-production"
 
   tags = {
     app = "some-service"
