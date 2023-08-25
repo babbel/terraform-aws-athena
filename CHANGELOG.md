@@ -1,5 +1,9 @@
 # Changelog
 
+## v3.0.0
+
+- [Drop `glue_catalog_database` from module and replace `workspace_bucket_prefix` by `workgroup_bucket` ](https://github.com/babbel/terraform-aws-athena/pull/32)
+
 ## v2.4.0
 
 - [Configure object ownership for the bucket](https://github.com/babbel/terraform-aws-athena/pull/31)
