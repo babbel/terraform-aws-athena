@@ -1,5 +1,13 @@
 # Changelog
 
+## v3.0.2
+
+- [Provide empty map as default for `tags` variable](https://github.com/babbel/terraform-aws-athena/pull/35)
+
+## v3.0.1
+
+- [Update README.md](https://github.com/babbel/terraform-aws-athena/pull/34)
+
 ## v3.0.0
 
 - [Drop `glue_catalog_database` from module and replace `workspace_bucket_prefix` by `workgroup_bucket` ](https://github.com/babbel/terraform-aws-athena/pull/32)
