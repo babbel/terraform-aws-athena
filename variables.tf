@@ -21,7 +21,8 @@ variable "selected_engine_version" {
 variable "tags" {
   description = "Map of tags to assign to all resources supporting tags."
 
-  type = map(string)
+  type    = map(string)
+  default = {}
 }
 
 variable "workspace_bucket_expiration_days" {
