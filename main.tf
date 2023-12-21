@@ -64,6 +64,13 @@ resource "aws_athena_workgroup" "this" {
 
     result_configuration {
       output_location = "s3://${aws_s3_bucket.athena-workspace.bucket}/"
+
+      dynamic "acl_configuration" {
+        for_each = var.result_bucket_owner_full_control ? [1] : []
+        content {
+          s3_acl_option = "BUCKET_OWNER_FULL_CONTROL"
+        }
+      }
     }
   }
 
