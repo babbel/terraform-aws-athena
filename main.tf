@@ -9,16 +9,6 @@ resource "aws_s3_bucket" "athena-workspace" {
   )
 }
 
-resource "aws_s3_bucket_server_side_encryption_configuration" "athena-workspace" {
-  bucket = aws_s3_bucket.athena-workspace.bucket
-
-  rule {
-    apply_server_side_encryption_by_default {
-      sse_algorithm = "AES256"
-    }
-  }
-}
-
 resource "aws_s3_bucket_lifecycle_configuration" "athena-workspace" {
   count = var.workspace_bucket_expiration_days != null ? 1 : 0
 
