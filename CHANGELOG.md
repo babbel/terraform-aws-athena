@@ -1,5 +1,9 @@
 # Changelog
 
+## v3.0.3
+
+- [Drop `aws_s3_bucket_server_side_encryption_configuration` as it's default encryption anyway](https://github.com/babbel/terraform-aws-athena/pull/40)
+
 ## v3.0.2
 
 - [Provide empty map as default for `tags` variable](https://github.com/babbel/terraform-aws-athena/pull/35)
