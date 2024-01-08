@@ -31,6 +31,14 @@ variable "workspace_bucket_expiration_days" {
   description = "The expiration days for objects in the workspace bucket in days. By default objects are expired 30 days after their creation. If set to null, expiration is disabled."
 }
 
+variable "result_bucket_owner_full_control" {
+  description = "Whether to grant the owner of the result bucket full control over the bucket."
+
+  type = bool
+
+  default = true
+}
+
 variable "workgroup_bucket" {
   description = "The name of the bucket to contain the Athena work group's data."
   type        = string
