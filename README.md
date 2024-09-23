@@ -21,11 +21,6 @@ module "alb-athena-example" {
   name             = "alb-logs-example-production"
   workgroup_bucket = "athena-workgroup-alb-logs-example-production"
 
-  tags = {
-    app = "example"
-    env = "production"
-  }
-
   resource_specific_tags = {
     s3_bucket = {
       owner = "athena"

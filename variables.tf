@@ -1,3 +1,12 @@
+variable "default_tags" {
+  type    = map(string)
+  default = {}
+
+  description = <<EOS
+Map of tags assigned to all AWS resources created by this module.
+EOS
+}
+
 variable "force_destroy" {
   type    = bool
   default = false
@@ -30,15 +39,6 @@ variable "selected_engine_version" {
 
   description = <<EOS
 The workgroup's engine version.
-EOS
-}
-
-variable "tags" {
-  type    = map(string)
-  default = {}
-
-  description = <<EOS
-Map of tags assigned to all AWS resources created by this module.
 EOS
 }
 
