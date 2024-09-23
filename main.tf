@@ -4,7 +4,7 @@ resource "aws_s3_bucket" "athena-workspace" {
   force_destroy = var.force_destroy
 
   tags = merge(
-    var.tags,
+    var.default_tags,
     lookup(var.resource_specific_tags, "s3_bucket", {})
   )
 }
@@ -68,7 +68,7 @@ resource "aws_athena_workgroup" "this" {
   }
 
   tags = merge(
-    var.tags,
+    var.default_tags,
     lookup(var.resource_specific_tags, "athena_workgroup", {})
   )
 }
