@@ -1,3 +1,12 @@
+variable "athena_workgroup_tags" {
+  type    = map(string)
+  default = {}
+
+  description = <<EOS
+Map of tags assigned to the Athena workgroup created by this module. Tags in this map will override tags in `var.default_tags`.
+EOS
+}
+
 variable "default_tags" {
   type    = map(string)
   default = {}
@@ -24,12 +33,12 @@ Name used for resources and depending resources.
 EOS
 }
 
-variable "resource_specific_tags" {
-  type    = map(map(string))
+variable "s3_bucket_tags" {
+  type    = map(string)
   default = {}
 
   description = <<EOS
-Map of tags to assign to specific resources supporting tags. Merged with `tags`.
+Map of tags assigned to the S3 bucket created by this module. Tags in this map will override tags in `var.default_tags`.
 EOS
 }
 
