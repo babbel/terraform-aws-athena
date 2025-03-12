@@ -16,9 +16,9 @@ resource "aws_s3_bucket_lifecycle_configuration" "athena-workspace" {
     status = "Enabled"
 
     # applies to all objects in the bucket:
-    # omitting `filter` is effectively the same, but it's a bit confusing,
-    # as it will generate a filter with an empty path prefix.
-    filter {}
+    # using `filter` requiers setting the prefix attriburte.
+    # the empty prefix ensures all objects are matched.
+    filter { prefix = "" }
 
     expiration {
       days = var.workspace_bucket_expiration_days
