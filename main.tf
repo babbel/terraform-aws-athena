@@ -44,6 +44,13 @@ resource "aws_s3_bucket_ownership_controls" "athena-workspace" {
   }
 }
 
+resource "aws_s3_bucket_abac" "athena-workspace" {
+  bucket = aws_s3_bucket.athena-workspace.bucket
+  abac_status {
+    status = "Enabled"
+  }
+}
+
 resource "aws_athena_workgroup" "this" {
   name = var.name
 
